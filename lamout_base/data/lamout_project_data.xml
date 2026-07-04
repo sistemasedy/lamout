@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="project_villa_espana" model="project.project"><field name="name">Villa España</field><field name="lamout_code">VE</field><field name="account_id" ref="analytic_account_ve"/></record>
+    <record id="project_yocasta_miramar" model="project.project"><field name="name">Yocasta Miramar</field><field name="lamout_code">YM</field><field name="account_id" ref="analytic_account_ym"/></record>
+    <record id="project_bianchi_miramar" model="project.project"><field name="name">Bianchi Miramar</field><field name="lamout_code">BM</field><field name="account_id" ref="analytic_account_bm"/></record>
+    <record id="project_villa_cesarina" model="project.project"><field name="name">Villa Cesarina</field><field name="lamout_code">VC</field><field name="account_id" ref="analytic_account_vc"/></record>
+</odoo>

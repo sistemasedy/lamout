@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="analytic_plan_projects" model="account.analytic.plan">
+        <field name="name">Proyectos Lamout</field>
+        <field name="default_applicability">optional</field>
+    </record>
+    <record id="analytic_account_ve" model="account.analytic.account"><field name="name">VE</field><field name="plan_id" ref="analytic_plan_projects"/></record>
+    <record id="analytic_account_ym" model="account.analytic.account"><field name="name">YM</field><field name="plan_id" ref="analytic_plan_projects"/></record>
+    <record id="analytic_account_bm" model="account.analytic.account"><field name="name">BM</field><field name="plan_id" ref="analytic_plan_projects"/></record>
+    <record id="analytic_account_vc" model="account.analytic.account"><field name="name">VC</field><field name="plan_id" ref="analytic_plan_projects"/></record>
+</odoo>

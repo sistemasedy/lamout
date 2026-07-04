@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="journal_ven" model="account.journal"><field name="name">Ventas Lamout</field><field name="code">VEN</field><field name="type">sale</field></record>
+    <record id="journal_com" model="account.journal"><field name="name">Compras Lamout</field><field name="code">COM</field><field name="type">purchase</field></record>
+    <record id="journal_nom" model="account.journal"><field name="name">Nómina Lamout</field><field name="code">NOM</field><field name="type">general</field></record>
+</odoo>

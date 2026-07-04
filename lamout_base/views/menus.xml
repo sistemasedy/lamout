@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_lamout_root" name="Lamout" sequence="90"/>
+    <menuitem id="menu_lamout_catalogs" name="Catálogos" parent="menu_lamout_root" sequence="10"/>
+    <menuitem id="menu_lamout_workers" name="Obreros" parent="menu_lamout_catalogs" action="action_lamout_worker" sequence="10"/>
+    <menuitem id="menu_lamout_partidas" name="Partidas CBS" parent="menu_lamout_catalogs" action="action_lamout_partida" sequence="20"/>
+    <menuitem id="menu_lamout_config" name="Configuración" parent="menu_lamout_root" sequence="90"/>
+</odoo>

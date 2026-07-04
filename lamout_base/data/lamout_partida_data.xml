@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Catálogo de partidas CBS: intencionalmente vacío en esta versión del módulo.
+         Cargar vía Ajustes > Técnico > Importar, o agregar <record> aquí más adelante. -->
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="account_income_construction" model="account.account">
+        <field name="code">401000</field>
+        <field name="name">Ingresos por avance de construcción</field>
+        <field name="account_type">income</field>
+    </record>
+    <record id="account_direct_labor" model="account.account">
+        <field name="code">501000</field>
+        <field name="name">Costo directo - mano de obra</field>
+        <field name="account_type">expense_direct_cost</field>
+    </record>
+    <record id="account_direct_materials" model="account.account">
+        <field name="code">502000</field>
+        <field name="name">Costo directo - materiales</field>
+        <field name="account_type">expense_direct_cost</field>
+    </record>
+    <record id="account_direct_subcontracts" model="account.account">
+        <field name="code">503000</field>
+        <field name="name">Costo directo - subcontratos</field>
+        <field name="account_type">expense_direct_cost</field>
+    </record>
+    <record id="account_admin_expenses" model="account.account">
+        <field name="code">601000</field>
+        <field name="name">Gastos generales - administración</field>
+        <field name="account_type">expense</field>
+    </record>
+    <record id="account_office_expenses" model="account.account">
+        <field name="code">602000</field>
+        <field name="name">Gastos generales - oficina</field>
+        <field name="account_type">expense</field>
+    </record>
+    <record id="account_transport_expenses" model="account.account">
+        <field name="code">603000</field>
+        <field name="name">Gastos generales - transporte</field>
+        <field name="account_type">expense</field>
+    </record>
+    <record id="account_misc_expenses" model="account.account">
+        <field name="code">604000</field>
+        <field name="name">Gastos generales - misceláneos</field>
+        <field name="account_type">expense</field>
+    </record>
+    <record id="account_payroll_payable" model="account.account">
+        <field name="code">210500</field>
+        <field name="name">Nómina por pagar</field>
+        <field name="account_type">liability_current</field>
+    </record>
+</odoo>
