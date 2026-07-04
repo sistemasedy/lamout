@@ -1,0 +1,23 @@
+{
+    "name": "Lamout Base",
+    "version": "19.0.1.0.0",
+    "summary": "Catálogos y setup contable base para Construcciones Lamout S.R.L.",
+    "category": "Construction",
+    "depends": ["project", "account", "analytic"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/lamout_account_data.xml",
+        "data/lamout_analytic_plan_data.xml",
+        "data/lamout_journal_data.xml",
+        "data/lamout_project_data.xml",
+        "data/lamout_worker_data.xml",
+        "data/lamout_partida_data.xml",
+        "views/lamout_worker_views.xml",
+        "views/lamout_partida_views.xml",
+        "views/lamout_project_views.xml",
+        "views/menus.xml",
+    ],
+    "installable": True,
+    "application": True,
+    "license": "LGPL-3",
+}

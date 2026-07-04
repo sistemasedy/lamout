@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lamout_partida_list" model="ir.ui.view">
+        <field name="name">lamout.partida.list</field><field name="model">lamout.partida</field>
+        <field name="arch" type="xml"><list><field name="code"/><field name="capitulo"/><field name="subcapitulo"/><field name="name"/><field name="uom_name"/><field name="state"/></list></field>
+    </record>
+    <record id="view_lamout_partida_form" model="ir.ui.view">
+        <field name="name">lamout.partida.form</field><field name="model">lamout.partida</field>
+        <field name="arch" type="xml"><form><sheet><group><field name="active" widget="boolean_toggle"/><field name="code"/><field name="name"/><field name="capitulo"/><field name="subcapitulo"/><field name="uom_name"/><field name="state"/></group></sheet></form></field>
+    </record>
+    <record id="view_lamout_partida_search" model="ir.ui.view">
+        <field name="name">lamout.partida.search</field><field name="model">lamout.partida</field>
+        <field name="arch" type="xml"><search><field name="code"/><field name="name"/><field name="capitulo"/><filter name="active_state" string="Activas" domain="[('state','=','active')]"/><filter name="inactive_state" string="Inactivas" domain="[('state','=','inactive')]"/><group expand="0" string="Agrupar por"><filter name="group_capitulo" string="Capítulo" context="{'group_by':'capitulo'}"/></group></search></field>
+    </record>
+    <record id="action_lamout_partida" model="ir.actions.act_window">
+        <field name="name">Partidas CBS</field><field name="res_model">lamout.partida</field><field name="view_mode">list,form</field><field name="context">{'search_default_group_capitulo': 1}</field>
+    </record>
+</odoo>
