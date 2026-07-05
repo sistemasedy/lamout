@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_lamout_operations" name="Operaciones" parent="lamout_base.menu_lamout_root" sequence="20"/>
+    <menuitem id="menu_lamout_attendance" name="Asistencia" parent="menu_lamout_operations" action="action_lamout_attendance" sequence="10"/>
+</odoo>
