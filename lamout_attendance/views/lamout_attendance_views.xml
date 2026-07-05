@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lamout_attendance_list" model="ir.ui.view">
+        <field name="name">lamout.attendance.list</field>
+        <field name="model">lamout.attendance</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="date"/>
+                <field name="project_id"/>
+                <field name="worker_id"/>
+                <field name="asistencia"/>
+                <field name="comida"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lamout_attendance_form" model="ir.ui.view">
+        <field name="name">lamout.attendance.form</field>
+        <field name="model">lamout.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="project_id"/>
+                        <field name="worker_id"/>
+                        <field name="asistencia"/>
+                        <field name="currency_id"/>
+                        <field name="comida"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_lamout_attendance_search" model="ir.ui.view">
+        <field name="name">lamout.attendance.search</field>
+        <field name="model">lamout.attendance</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="project_id"/>
+                <field name="worker_id"/>
+                <field name="date"/>
+                <filter name="today" string="Hoy" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter name="this_week" string="Esta semana" domain="[('date', '&gt;=', (context_today() - datetime.timedelta(days=context_today().weekday())).strftime('%Y-%m-%d')), ('date', '&lt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_project" string="Proyecto" context="{'group_by': 'project_id'}"/>
+                    <filter name="group_worker" string="Obrero" context="{'group_by': 'worker_id'}"/>
+                    <filter name="group_date" string="Fecha" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_lamout_attendance" model="ir.actions.act_window">
+        <field name="name">Asistencia</field>
+        <field name="res_model">lamout.attendance</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'group_by': 'project_id'}</field>
+    </record>
+</odoo>
