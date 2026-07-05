@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lamout_cubage_list" model="ir.ui.view">
+        <field name="name">lamout.cubage.list</field>
+        <field name="model">lamout.cubage</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="date"/>
+                <field name="project_id"/>
+                <field name="partida_id"/>
+                <field name="cantidad" sum="Total cantidad"/>
+                <field name="uom_name" readonly="1"/>
+                <field name="monto_destajo" sum="Total destajo"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lamout_cubage_form" model="ir.ui.view">
+        <field name="name">lamout.cubage.form</field>
+        <field name="model">lamout.cubage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="project_id"/>
+                        <field name="partida_id"/>
+                        <field name="cantidad"/>
+                        <field name="uom_name" readonly="1"/>
+                        <field name="monto_destajo"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_lamout_cubage_search" model="ir.ui.view">
+        <field name="name">lamout.cubage.search</field>
+        <field name="model">lamout.cubage</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="date"/>
+                <field name="project_id"/>
+                <field name="partida_id"/>
+                <filter name="date_filter" string="Fecha" date="date"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_project" string="Proyecto" context="{'group_by':'project_id'}"/>
+                    <filter name="group_partida" string="Partida" context="{'group_by':'partida_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_lamout_cubage_pivot" model="ir.ui.view">
+        <field name="name">lamout.cubage.pivot</field>
+        <field name="model">lamout.cubage</field>
+        <field name="arch" type="xml">
+            <pivot string="Resumen de Cubicación">
+                <field name="project_id" type="row"/>
+                <field name="partida_id" type="row"/>
+                <field name="cantidad" type="measure"/>
+                <field name="monto_destajo" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_lamout_cubage" model="ir.actions.act_window">
+        <field name="name">Cubicación</field>
+        <field name="res_model">lamout.cubage</field>
+        <field name="view_mode">list,form,pivot</field>
+    </record>
+
+    <record id="action_lamout_cubage_summary" model="ir.actions.act_window">
+        <field name="name">Resumen de Cubicación</field>
+        <field name="res_model">lamout.cubage</field>
+        <field name="view_mode">pivot,list</field>
+        <field name="context">{'group_by': ['project_id', 'partida_id']}</field>
+    </record>
+</odoo>
