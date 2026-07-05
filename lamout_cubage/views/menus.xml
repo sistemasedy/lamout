@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <menuitem id="menu_lamout_operations" name="Operaciones" parent="lamout_base.menu_lamout_root" sequence="20"/>
+    </data>
+    <menuitem id="menu_lamout_cubage" name="Cubicación" parent="menu_lamout_operations" action="action_lamout_cubage" sequence="10"/>
+    <menuitem id="menu_lamout_cubage_summary" name="Resumen Cubicación" parent="menu_lamout_operations" action="action_lamout_cubage_summary" sequence="20"/>
+</odoo>
